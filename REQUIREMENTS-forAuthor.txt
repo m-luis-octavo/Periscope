@@ -1,0 +1,31 @@
+1. API Design and Integration
+- Using Riot API
+
+2. Architectural Design 
+- Monolithic
+- UML Pending
+
+3. Authentication and Security
+- TODO: implement OAuth
+
+4. Database Design and ORM
+- Will be using SQLAlchemy
+
+5. Testing and Quality Assurance
+- TODO
+
+6. Deployment and DevOps
+- TODO: Will be using Heroku
+
+7. Performance Optimization
+- TODO: Will add performance monitoring
+
+8. Version Control and Collaboration
+- GitHub
+- README soon
+
+9. Code Quality and Documentation
+- 
+
+10. Presentation and Demonstration
+- 

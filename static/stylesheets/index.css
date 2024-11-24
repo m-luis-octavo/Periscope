@@ -1,0 +1,109 @@
+
+/* Fundamental website tweaks */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+p {
+    color: whitesmoke; 
+}
+
+a {
+    color: whitesmoke;
+}
+
+h1 {
+    font-size: 150px; 
+    font-weight: bold;
+    /* color: rgb(2, 197, 228) */
+    color: whitesmoke;
+}
+
+h2 {
+    font-size: 120;
+}
+
+/*
+h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+*/
+
+/* Currently used for title screen, change to its own class if using h4 for another purpose */
+h4 {
+    font-size: 40px;
+    font-weight: bold;
+    color: whitesmoke;
+    margin-bottom: 10px;
+}
+
+strong {
+    color: whitesmoke;
+}
+
+a:hover {
+    color: rgb(118, 255, 248);
+}
+
+/* Navigation bar tweaks */
+.navbar {
+    margin-bottom: 30px;
+    display:flex;
+    background-color: rgb(0, 41, 86);
+}
+
+.navbar-brand{
+    margin-left: 10%;
+    margin-right: 1%;
+}
+
+.navbar-end {
+    margin-right: 10%;
+}
+
+
+.field.has-addons.has-addons-centered {
+    margin-bottom: 60px;
+}
+
+.field.is-horizontal {
+    display: flex;
+    margin: 20px 30% 20px;
+}
+
+/*
+.field.is-horizontalSearch {
+    display: flex;
+    margin: 10px 35% 20px;
+    margin-bottom: 20px;
+}
+*/
+
+#OMDBSearch {
+    margin-bottom: 10px;
+}
+
+.trophy {
+    height: 24px;
+    width: 24px;
+    margin-left: 0px;
+    margin-right: auto;
+    display: flex;
+    justify-content: left;
+}
+
+#poster {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 227.5px;
+    width: 150px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Site Title -->
+    <title> Periscope | Login </title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="static/assets/logo.png">
+
+    <!--Stylesheets -->
+    <!-- Bulma Stylesheet -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" 
+    integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+    />
+    
+    <!-- Manual CSS Stylesheet-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index.css') }}" />
+
+    <!-- Vanilla Javascript -->
+    <script src="{{ url_for('static', filename='scripts/index.js') }}"> </script>
+    
+</head>
+
+<body style="background-color:rgb(0, 19, 40);">
+
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <!-- Brand -->
+      <div class="navbar-brand">
+        <img src="static/assets/logo.png" alt="" width="100" height="100"> 
+        <div class="navbar-item">
+          <h4>Periscope</h4>
+        </div>
+      </div>
+      
+      <div class="navbar-menu">
+        <!-- Left Sidebar -->
+        <div class="navbar-start">
+          <div class="navbar-item">
+            <a href="/">Home</a>
+          </div>
+          <div class="navbar-item">
+            <p>Landing</p>
+          </div>
+          <div class="navbar-item">
+            <p>Head-to-head</p>
+          </div>
+        </div>
+        <!-- Right Sidebar, dynamically change to profile icon if logged in later -->
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <p>Register</p>
+          </div>
+          <!-- Login Button -->
+          <div class="navbar-item">
+            <button class="button">Login</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Headliner -->
+    <div class="has-text-centered pb-6">
+      <h1>
+        Login
+      </h1>
+      <p>
+        Login is supported via OAuth, please use any of the providers below
+      </p>
+    </div>
+
+    <!-- New Search -->
+    <div class="field has-addons has-addons-centered is-rounded">
+      <p class="control">
+        <span class="select">
+          <select>
+            <option>NA</option>
+            <option>EU</option>
+            <option>SEA</option>
+          </select>
+        </span>
+      </p>
+      <p class="control">
+        <input class="input" type="text" placeholder="Player#NA1">
+      </p>
+      <p class="control">
+        <form action="/" method="POST">
+          <button class="button is-link" type="submit">
+            Dive In
+          </button>
+        </form>
+      </p>
+    </div>
+
+</body>
+
+<footer class="footer mt-auto" style="background-color:rgb(12, 15, 19);">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
+      The source code is licensed
+      <a href="https://opensource.org/license/mit">MIT</a>. The
+      website content is licensed
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"
+        >CC BY NC SA 4.0</a
+      >.
+    </p>
+  </div>
+</footer>
+</html>

@@ -1,0 +1,5 @@
+Setting up HTTP2
+https://medium.com/@prashantsde/deploy-flask-app-inside-container-and-setup-nginx-reverse-proxy-ac4407fe07c
+
+Integrating CSS in flask
+https://stackoverflow.com/questions/14296866/multiple-css-files-in-flask
