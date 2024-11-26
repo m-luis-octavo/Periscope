@@ -131,17 +131,24 @@
     <!-- Basic Player Info + Fun stats -->
     <section id="top-wrapper" class="section">
       <div class="columns">
+
+        <!-- Left Container -->
+
         <div class="column is-one-quarter">
           <div class="container">
             <div class="notification is-danger">
               <figure class="image is-64x64">
                 <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/11.14.1/img/profileicon/934.png" />
               </figure>
-              <h4>Destly#NA1</h4>
+              {% if SummonerNameList %}
+                <h4>{{ SummonerNameList }}!</h4>
+              {% else %}
+                <h4>Hello, World!</h4>
+              {% endif %}
+              
               <p>North America</p>
               <p>Level 400</p>
-              <p>Win Percentage</p>
-              
+
               <hr>
 
               <div class="columns">
@@ -149,11 +156,15 @@
                   <p>Ranked Solo</p>
                   <img src="https://lolprofile.net/web/img/badges/GOLD.png" />
                   <p>Gold III</p>
+                  <p>Win Percentage</p>
+                  <p> 10W 5L | 66%</p>
                 </div>
                 <div class="column">
                   <p>Ranked Flex</p>
                   <img src="https://lolprofile.net/web/img/badges/GOLD.png" />
                   <p>Gold II</p>
+                  <p>Win Percentage</p>
+                  <p> 10W 5L | 66%</p>
                 </div>
               </div>
 
@@ -172,6 +183,9 @@
             </div>
           </div>
         </div>
+
+        <!-- Right Container -->
+
         <div class="column">
           <div class="notification is-info">
 
@@ -244,22 +258,124 @@
               </div>
               <div class="column">
                 <figure class="image is-64x64">
-                  <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/champion/Lulu.png" />
+                  <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/champion/Vex.png" />
                 </figure>
               </div>
               <div class="column">
                 <figure class="image is-64x64">
-                  <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/champion/Lulu.png" />
+                  <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/champion/Rumble.png" />
                 </figure>
               </div>
             </div>
           
           </div>
+
+
+          <!-- Match History -->
+          <div class="notification is-primary">
+            <p> Match History </p>
+
+            <div class="columns">
+              <div class="column">
+                Ranked Solo<br>Time<br>Length<br>Outcome
+              </div>
+
+              <div class="column is-one-fifth">
+                
+                <div class="columns">
+                  <div class="column is-centered">
+                    <figure class="image is-64x64">
+                      <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/champion/Lulu.png" />
+                    </figure>
+    
+                    
+                  </div>
+                  <div class="column">
+                    <figure class="image is-32x32">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_flash.png" />
+                    </figure>
+                    <figure class="image is-32x32">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
+                  </div>
+                </div>
+                
+                <!-- Optional -->
+                <div class="column has-text-centered is-narrow">
+                  Amazing
+                </div>
+
+              </div>
+
+
+              <div class="column">
+                <p>5/8/29</p>
+                <p>4.25:1 KDA</p>
+                <p>6CS/M</p>
+                <p>PScore: 8.4</p>
+
+              </div>
+
+              <div class="column">
+                <p>Positive Trait</p>
+                <p>Positive Trait</p>
+                <p>Neutral Trait</p>
+                <p>Negative Trait</p>
+
+              </div>
+
+              <!-- Player List -->
+
+              <div class="column">
+
+                <figure class="image is-16x16">
+                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                </figure>
+                <figure class="image is-16x16">
+                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                </figure>
+                <figure class="image is-16x16">
+                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                </figure>
+                <figure class="image is-16x16">
+                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                </figure>
+                <figure class="image is-16x16">
+                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                </figure>
+
+
+              </div>
+
+              
+              <div class="column">           
+                <figure class="image is-16x16">
+                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                </figure>
+                <figure class="image is-16x16">
+                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                </figure>
+                <figure class="image is-16x16">
+                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                </figure>
+                <figure class="image is-16x16">
+                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                </figure>
+                <figure class="image is-16x16">
+                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                </figure>
+                
+              </div>
+
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Recently played + Match History -->
+    
     
     
 
