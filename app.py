@@ -25,13 +25,14 @@ def index(SummonerNameList=[]):
 
         # Return HTML with updated values
         return render_template('index.html', SummonerNameList=SummonerName)
-
+    
     return render_template('index.html')
 
 # Login 
 # Landing page
 @app.route('/login')
 def login():
+
     return render_template('login.html')
 
 # Initiate login
