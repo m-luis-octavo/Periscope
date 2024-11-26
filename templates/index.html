@@ -9,6 +9,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="static/assets/logo.png">
 
+    
     <!--Stylesheets -->
     <!-- Bulma Stylesheet -->
     <link rel="stylesheet" 
@@ -67,33 +68,13 @@
       </div>
     </nav>
 
-    <!-- Old Search -->
-    <!-- 
-    <div class="field is-horizontalSearch">
-      <div class="field-body">
-        <div class="field">
-          <form action="/" method="POST">
-            <div id="OMDBSearch">
-              <input class="input is-rounded is-info" id="movie" name="movie" placeholder="tt5344382">
-            </div>
-            <div class="has-text-centered">
-              <button onclick="showDetails(document.getElementById('OMDBID').value)" class="button is-danger" type="submit">
-                Submit     
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    -->
-
     <!-- Headliner -->
     <div class="has-text-centered pb-6">
       <h1>
         Periscope
       </h1>
       <p>
-        Yet another league search tool
+        The fun way to look at league statistics
       </p>
     </div>
     
@@ -113,12 +94,66 @@
           <input class="input" id="player" name="player" type="text" placeholder="Player#NA1">
         </div>
         <div class="control">   
-          <button class="button is-link" type="submit">
+          <button onclick="displaySummoner()" class="button is-link" type="submit">
             Dive In
           </button>
         </div>
       </div>
     </form>
+
+    <!-- Results section -->
+    <!-- 
+    <p id="Summoner">No</p>
+
+    {% if SummonerNameList %}
+      <h4>Hello {{ SummonerNameList }}!</h4>
+    {% else %}
+      <h4>Hello, World!</h4>
+    {% endif %}
+    -->
+
+    <!-- Summoner Name and Icon -->
+    <div class="container">
+      <div class="notification is-danger">
+        <figure class="image is-64x64">
+          <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/11.14.1/img/profileicon/934.png" />
+        </figure>
+        <h4>Destly#NA1</h4>
+        <p>Level 400</p>
+        <p>Win Percentage</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="notification is-info">
+
+      </div>
+    </div>
+
+    <!-- Basic Player Info + Fun stats -->
+    <section class="section">
+      <div class="columns">
+        <div class="column is-one-quarter">
+          <div class="container">
+            <div class="notification is-danger">
+              <figure class="image is-64x64">
+                <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/11.14.1/img/profileicon/934.png" />
+              </figure>
+              <h4>Destly#NA1</h4>
+              <p>Level 400</p>
+              <p>Win Percentage</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <p>Fun stats go here</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recently played + Match History -->
+    
+    
 
     
     <!--
@@ -258,23 +293,6 @@
         </div>
       </div>
 
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label">History:</label>
-      </div>
-
-      <div class="field-body">
-        {% if history %}
-          <ul>
-              {% for movie in history %}
-                  <li><strong>{{ movie.movie }}</strong></li>
-              {% endfor %}
-          </ul>
-        {% else %}
-            <p>No submissions yet.</p>
-        {% endif %}
-      </div>
-    </div>
     -->
 
 </body>

@@ -25,19 +25,18 @@ h2 {
     font-size: 120;
 }
 
-/*
 h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-*/
-
-/* Currently used for title screen, change to its own class if using h4 for another purpose */
-h4 {
     font-size: 40px;
     font-weight: bold;
     color: whitesmoke;
     margin-bottom: 10px;
+}
+
+/* Currently used for title screen, change to its own class if using h4 for another purpose */
+h4 {
+    font-size: 30px;
+    font-weight: bold;
+    color: whitesmoke;
 }
 
 strong {
@@ -103,7 +102,11 @@ a:hover {
     width: 150px;
 }
 
+/*
 .column {
     float: left;
     width: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
+*/

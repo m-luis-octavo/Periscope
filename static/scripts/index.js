@@ -1,4 +1,14 @@
-// Draft change text function
+// New league searcher functions
+
+async function displaySummoner() {
+    document.getElementById('Summoner').innerHTML = 'Hello';
+}
+
+
+
+
+// Old movie searcher functions
+/*
 async function changeTitle() {
     document.getElementById("TitleText").setAttribute('value', data.Title);
     document.getElementById("YearText").setAttribute('value','2022');
@@ -66,3 +76,4 @@ async function loadMovie(ID) {
     }
     
 }
+*/

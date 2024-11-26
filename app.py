@@ -7,11 +7,11 @@ app = Flask(__name__)
 app.static_folder = 'static'
 
 # Naive search history
-history = []
+# history = ['nah']
 
 # Setting up the main page
 @app.route('/', methods=('GET', 'POST'))
-def index():
+def index(SummonerNameList=[]):
 
     # If there is content to be added, this code is executed instead
     if request.method == "POST":
@@ -19,11 +19,14 @@ def index():
         # User name and tagline
         name = request.form.get('player')
         # Region
-        
+        SummonerName = components.riotAPI.printSummonerV2(name)
+        # Add to history
+        SummonerNameList.append(SummonerName)
 
-        components.riotAPI.printSummonerV2(name)
+        # Return HTML with updated values
+        return render_template('index.html', SummonerNameList=SummonerName)
 
-    return render_template('index.html', history=history)
+    return render_template('index.html')
 
 # Login 
 # Landing page
