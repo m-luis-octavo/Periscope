@@ -47,6 +47,11 @@ a:hover {
     color: rgb(118, 255, 248);
 }
 
+#top-wrapper {
+    margin-left: 170px;
+    margin-right: 170px;
+}
+
 /* Navigation bar tweaks */
 .navbar {
     margin-bottom: 30px;
@@ -110,3 +115,9 @@ a:hover {
     margin-right: 10px;
 }
 */
+
+.column {
+    border-style: solid;
+    border-color: greenyellow;
+    border-width: 1px;
+}
