@@ -6,10 +6,6 @@ import components.riotAPI
 app = Flask(__name__)
 app.static_folder = 'static'
 
-
-# Naive dictionary
-
-
 # Setting up the main page
 @app.route('/', methods=('GET', 'POST'))
 def index():
@@ -17,21 +13,24 @@ def index():
     # If there is content to be added, this code is executed instead
     if request.method == "POST":
         # Naive list
-        SummonerInfo=[]
+        #SummonerInfo=[]
         # Retrieve user inputs
         # User name and tagline
         name = request.form.get('player')
         # Region
-        SummonerName, SummonerLevel, SummonerIconURL = components.riotAPI.printSummonerV2(name)
+
+        # Riot API Function, returns a pre-processed list
+        #SummonerName, SummonerLevel, SummonerIconURL = components.riotAPI.printSummonerV2(name)
+        SummonerInfo = components.riotAPI.printSummonerV2(name)
+        MatchInfo = components.riotAPI.printMatch(name)
 
         # Add to main info (naive implementation)
-        SummonerInfo.append(SummonerName)
-        SummonerInfo.append(SummonerLevel)
-        SummonerInfo.append(SummonerIconURL)
-
+        #SummonerInfo.append(SummonerName)
+        #SummonerInfo.append(SummonerLevel)
+        #SummonerInfo.append(SummonerIconURL)
         
         # Return HTML with updated values
-        return render_template('index.html', SummonerInfo=SummonerInfo)
+        return render_template('index.html', SummonerInfo=SummonerInfo, MatchInfo=MatchInfo)
     
     return render_template('index.html')
 

@@ -54,9 +54,6 @@
         </div>
         <!-- Right Sidebar, dynamically change to profile icon if logged in later -->
         <div class="navbar-end">
-          <div class="navbar-item">
-            <p>Register</p>
-          </div>
           <!-- Login Button -->
           <div class="navbar-item">
             <a href="/login">
@@ -138,6 +135,7 @@
           <div class="container">
             <div class="notification is-danger">
 
+              <!-- Player Icon -->
               {% if SummonerInfo %}
                 <figure class="image is-64x64">
                   <img class="is-rounded" src="{{ SummonerInfo[2] }}" />
@@ -145,14 +143,15 @@
               {% else %}
                 <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
               {% endif %}
-              
+              <!-- Player Name -->
               {% if SummonerInfo %}
                 <h4>{{ SummonerInfo[0] }}</h4>
               {% else %}
                 <progress id="progress-big" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
               {% endif %}
-              
+              <!-- Region -->
               <p>North America</p>
+              <!-- Player Level -->
               {% if SummonerInfo %}
                 <p>Level {{ SummonerInfo[1] }}</p>
               {% else %}
@@ -202,8 +201,29 @@
             <!-- Most Played Section -->
             <p>Most Played</p>
             <div class="columns">
-  
-              <!-- Testing cell starts -->
+              <div class="column">
+                <div class="columns">
+                  <div class="column is-one-quarter">
+                    <figure class="image is-64x64">
+                      <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/champion/Tristana.png" />
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <!-- Mastery Top 1 Points -->
+                    {% if SummonerInfo %}
+                      <h4>{{ SummonerInfo[4][0] }} pts</h4>
+                    {% else %}
+                      <progress id="progress-big" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                    {% endif %}
+
+                    {% if SummonerInfo %}
+                      <p>{{ SummonerInfo[3][0] }}</p>
+                    {% else %}
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                    {% endif %}  
+                  </div>
+                </div>
+              </div>
 
               <div class="column">
                 <div class="columns">
@@ -213,23 +233,43 @@
                     </figure>
                   </div>
                   <div class="column">
-                    <h4>1,000,000 pts</h4>
-                    <p>Tristana</p>
+                    <!-- Mastery Top 2 Points -->
+                    {% if SummonerInfo %}
+                      <h4>{{ SummonerInfo[4][1] }} pts</h4>
+                    {% else %}
+                      <progress id="progress-big" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                    {% endif %}
+
+                    {% if SummonerInfo %}
+                      <p>{{ SummonerInfo[3][1] }}</p>
+                    {% else %}
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                    {% endif %}  
                   </div>
                 </div>
               </div>
-
-              <!-- Testing cell ends -->
-
               <div class="column">
-                <figure class="image is-64x64">
-                  <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/champion/Poppy.png" />
-                </figure>
-              </div>
-              <div class="column">
-                <figure class="image is-64x64">
-                  <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/champion/Lulu.png" />
-                </figure>
+                <div class="columns">
+                  <div class="column is-one-quarter">
+                    <figure class="image is-64x64">
+                      <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/champion/Tristana.png" />
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <!-- Mastery Top 3 Points -->
+                    {% if SummonerInfo %}
+                      <h4>{{ SummonerInfo[4][2] }} pts</h4>
+                    {% else %}
+                      <progress id="progress-big" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                    {% endif %}
+
+                    {% if SummonerInfo %}
+                      <p>{{ SummonerInfo[3][2] }}</p>
+                    {% else %}
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                    {% endif %}  
+                  </div>
+                </div>
               </div>
             </div>
             
@@ -280,6 +320,15 @@
           
           </div>
           <!-- Blue Quadrant Ends Here -->
+
+          <!-- Last Match Insights -->
+          <div class="notification is-link">
+            <div class="level-left">
+              <p> Last Match Insights </p>
+              <br>
+              <button style="margin-left: 20px;" class="button is-warning is-static">Beta</button>
+            </div>
+          </div>
 
           <!-- Green Quadrant Starts Here -->
           <!-- Match History -->
@@ -334,43 +383,172 @@
 
               </div>
 
-              <!-- Player List -->
+              <!-- Blue Side Player List -->
               <div class="column">
-                <nav class="level">
-                  <div class="level-left">
-                    <div class="level-item">
-                      <figure class="image is-16x16">
-                        <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                      </figure>
-                    </div>
-                    <div class="level-item">
-                      <p>Destly</p>
-                    </div>
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-16x16">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
                   </div>
-                </nav>
-            
-                
-
-
+                  <div class="level-item">
+                    {% if MatchInfo %}
+                      <p>{{ MatchInfo[0][0] }}</p>
+                    {% else %}
+                      <!-- 
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                      -->
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-16x16">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
+                  </div>
+                  <div class="level-item">
+                    {% if MatchInfo %}
+                      <p>{{ MatchInfo[0][1] }}</p>
+                    {% else %}
+                      <!-- 
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                      -->
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-16x16">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
+                  </div>
+                  <div class="level-item">
+                    {% if MatchInfo %}
+                      <p>{{ MatchInfo[0][2] }}</p>
+                    {% else %}
+                      <!-- 
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                      -->
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-16x16">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
+                  </div>
+                  <div class="level-item">
+                    {% if MatchInfo %}
+                      <p>{{ MatchInfo[0][3] }}</p>
+                    {% else %}
+                      <!-- 
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                      -->
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-16x16">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
+                  </div>
+                  <div class="level-item">
+                    {% if MatchInfo %}
+                      <p>{{ MatchInfo[0][4] }}</p>
+                    {% else %}
+                      <!-- 
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                      -->
+                    {% endif %}
+                  </div>
+                </div>
               </div>
 
-              
+              <!-- Red Side Player List -->
               <div class="column">           
-                <figure class="image is-16x16">
-                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                </figure>
-                <figure class="image is-16x16">
-                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                </figure>
-                <figure class="image is-16x16">
-                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                </figure>
-                <figure class="image is-16x16">
-                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                </figure>
-                <figure class="image is-16x16">
-                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                </figure>
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-16x16">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
+                  </div>
+                  <div class="level-item">
+                    {% if MatchInfo %}
+                      <p>{{ MatchInfo[2][0] }}</p>
+                    {% else %}
+                      <!-- 
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                      -->
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-16x16">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
+                  </div>
+                  <div class="level-item">
+                    {% if MatchInfo %}
+                      <p>{{ MatchInfo[2][1] }}</p>
+                    {% else %}
+                      <!-- 
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                      -->
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-16x16">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
+                  </div>
+                  <div class="level-item">
+                    {% if MatchInfo %}
+                      <p>{{ MatchInfo[2][2] }}</p>
+                    {% else %}
+                      <!-- 
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                      -->
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-16x16">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
+                  </div>
+                  <div class="level-item">
+                    {% if MatchInfo %}
+                      <p>{{ MatchInfo[2][3] }}</p>
+                    {% else %}
+                      <!-- 
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                      -->
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-16x16">
+                      <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                    </figure>
+                  </div>
+                  <div class="level-item">
+                    {% if MatchInfo %}
+                      <p>{{ MatchInfo[2][4] }}</p>
+                    {% else %}
+                      <!-- 
+                      <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+                      -->
+                    {% endif %}
+                  </div>
+                </div>
                 
               </div>
 
