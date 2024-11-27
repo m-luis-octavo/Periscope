@@ -137,17 +137,27 @@
         <div class="column is-one-quarter">
           <div class="container">
             <div class="notification is-danger">
-              <figure class="image is-64x64">
-                <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/11.14.1/img/profileicon/934.png" />
-              </figure>
-              {% if SummonerNameList %}
-                <h4>{{ SummonerNameList }}!</h4>
+
+              {% if SummonerInfo %}
+                <figure class="image is-64x64">
+                  <img class="is-rounded" src="{{ SummonerInfo[2] }}" />
+                </figure>
               {% else %}
-                <h4>Hello, World!</h4>
+                <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+              {% endif %}
+              
+              {% if SummonerInfo %}
+                <h4>{{ SummonerInfo[0] }}</h4>
+              {% else %}
+                <progress id="progress-big" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
               {% endif %}
               
               <p>North America</p>
-              <p>Level 400</p>
+              {% if SummonerInfo %}
+                <p>Level {{ SummonerInfo[1] }}</p>
+              {% else %}
+                <progress id="progress-small" class="progress is-small is-info" max="100" style="margin-top: 20px;">15%</progress>
+              {% endif %}
 
               <hr>
 
@@ -185,14 +195,14 @@
         </div>
 
         <!-- Right Container -->
-
         <div class="column">
-          <div class="notification is-info">
 
+          <!-- Green Quadrant Starts Here -->
+          <div class="notification is-info">
             <!-- Most Played Section -->
             <p>Most Played</p>
             <div class="columns">
-              
+  
               <!-- Testing cell starts -->
 
               <div class="column">
@@ -203,7 +213,7 @@
                     </figure>
                   </div>
                   <div class="column">
-                    <h4>1,000,000</h4>
+                    <h4>1,000,000 pts</h4>
                     <p>Tristana</p>
                   </div>
                 </div>
@@ -269,8 +279,9 @@
             </div>
           
           </div>
+          <!-- Blue Quadrant Ends Here -->
 
-
+          <!-- Green Quadrant Starts Here -->
           <!-- Match History -->
           <div class="notification is-primary">
             <p> Match History </p>
@@ -300,9 +311,8 @@
                   </div>
                 </div>
                 
-                <!-- Optional -->
-                <div class="column has-text-centered is-narrow">
-                  Amazing
+                <div class="level has-text-centered">
+                  <p>Yey</p>
                 </div>
 
               </div>
@@ -325,24 +335,21 @@
               </div>
 
               <!-- Player List -->
-
               <div class="column">
-
-                <figure class="image is-16x16">
-                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                </figure>
-                <figure class="image is-16x16">
-                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                </figure>
-                <figure class="image is-16x16">
-                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                </figure>
-                <figure class="image is-16x16">
-                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                </figure>
-                <figure class="image is-16x16">
-                  <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
-                </figure>
+                <nav class="level">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <figure class="image is-16x16">
+                        <img class="is-rounded" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d/summoner_smite.png" />
+                      </figure>
+                    </div>
+                    <div class="level-item">
+                      <p>Destly</p>
+                    </div>
+                  </div>
+                </nav>
+            
+                
 
 
               </div>

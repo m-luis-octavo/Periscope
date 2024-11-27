@@ -121,3 +121,15 @@ a:hover {
     border-color: greenyellow;
     border-width: 1px;
 }
+
+#progress-big {
+    
+}
+
+#progress-medium {
+
+}
+
+#progress-small {
+    width: 150px;
+}
