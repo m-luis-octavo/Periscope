@@ -163,15 +163,32 @@
               <div class="columns">
                 <div class="column">
                   <p>Ranked Solo</p>
-                  <img src="https://lolprofile.net/web/img/badges/GOLD.png" />
-                  <p>Gold III</p>
+                  {% if RankInfo %}
+                    <img src="/static/cdn/ranked_icons/Rank={{ RankInfo[0] }}.png" />
+                  {% else %}
+                    <img src="/static/cdn/ranked_icons/Rank=Unranked.png" />
+                  {% endif %} 
+                  {% if RankInfo %}
+                    <p>{{ RankInfo[0] }} {{ RankInfo[1] }}</p>
+                  {% else %}
+                    <p>Unranked</p>
+                  {% endif %} 
                   <p>Win Percentage</p>
                   <p> 10W 5L | 66%</p>
                 </div>
+
                 <div class="column">
                   <p>Ranked Flex</p>
-                  <img src="https://lolprofile.net/web/img/badges/GOLD.png" />
-                  <p>Gold II</p>
+                  {% if RankInfo %}
+                    <img src="/static/cdn/ranked_icons/Rank={{ RankInfo[2] }}.png" />
+                  {% else %}
+                    <img src="/static/cdn/ranked_icons/Rank=Unranked.png" />
+                  {% endif %} 
+                  {% if RankInfo %}
+                    <p>{{ RankInfo[2] }} {{ RankInfo[3] }}</p>
+                  {% else %}
+                    <p>Unranked</p>
+                  {% endif %} 
                   <p>Win Percentage</p>
                   <p> 10W 5L | 66%</p>
                 </div>

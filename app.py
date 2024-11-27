@@ -23,6 +23,7 @@ def index():
         #SummonerName, SummonerLevel, SummonerIconURL = components.riotAPI.printSummonerV2(name)
         SummonerInfo = components.riotAPI.printSummonerV2(name)
         MatchInfo = components.riotAPI.printMatch(name)
+        RankInfo = components.riotAPI.printPlayerRank(name)
 
         # Add to main info (naive implementation)
         #SummonerInfo.append(SummonerName)
@@ -30,7 +31,7 @@ def index():
         #SummonerInfo.append(SummonerIconURL)
         
         # Return HTML with updated values
-        return render_template('index.html', SummonerInfo=SummonerInfo, MatchInfo=MatchInfo)
+        return render_template('index.html', SummonerInfo=SummonerInfo, MatchInfo=MatchInfo, RankInfo=RankInfo)
     
     return render_template('index.html')
 

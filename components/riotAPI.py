@@ -2,7 +2,7 @@
 import cassiopeia as cass
 
 # API Key, resets daily
-cass.set_riot_api_key("RGAPI-3cff7a4c-f72e-46cf-bb93-e464a6d35d9f")
+cass.set_riot_api_key("RGAPI-e0d91437-cc22-4611-a028-5d8962eaf8f6")
 
 def printSummoner():
     account = cass.get_account(name="Destly", tagline="NA1", region="NA")
@@ -125,5 +125,19 @@ def printMatch(nameInputNonSplit):
 def printNewestMatch():
     ...
 
-def printPlayerRank():
-    ...
+def printPlayerRank(nameInputNonSplit):
+    # Separate the player name and tagline
+    nameInput, taglineInput = nameInputNonSplit.split("#")
+
+    account = cass.get_account(name=nameInput, tagline=taglineInput, region="NA")
+    summoner = account.summoner
+
+    #entries = summoner.league_entries
+
+    entries = cass.get_league_entries(summoner=summoner)
+    RankInfo = []
+    for entry in entries:
+        RankInfo.append(str(entry.tier))
+        RankInfo.append(str(entry.division))
+    #print(PlayerRanks)
+    return RankInfo

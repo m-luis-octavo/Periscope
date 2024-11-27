@@ -1,5 +1,6 @@
 1. API Design and Integration
 - Using Riot API
+- Documentation needed
 
 2. Architectural Design 
 - Monolithic
