@@ -119,7 +119,41 @@ def print_newest_match(name: str, tagline: str, region: str):
         print(f"{p.champion.name}: {p.runes.keystone.name}, ({', '.join([r.name for r in p.stat_runes])})")
 
 
+def print_keystone_runes():
+    print("Keystone runes:")
+    for rune in cass.get_runes(region="NA").keystones:
+        print(rune.name)
+
+
+def print_runes():
+    print("All runes:")
+    for rune in cass.get_runes(region="NA"):
+        print(f"{rune.name} id: {rune.id} tier: {rune.tier}")
+
+
+def print_precision_runes():
+    print("Precision runes:")
+    for rune in cass.get_runes(region="NA").precision:
+        print(rune.name, rune.id, rune.path.name)
+
+from cassiopeia import SummonerSpell, SummonerSpells
+from cassiopeia.data import GameMode
+def get_summoner_spells():
+    sspells = cass.get_summoner_spells(region="NA")
+    for sspell in sspells:
+        if set(sspell.modes) & {
+            GameMode.classic,
+            GameMode.aram,
+            GameMode.poro_king,
+            GameMode.ascension,
+        }:
+            print("Name:", sspell.name)
+            print("Description:", sspell.description)
+            print()
+
+    sspell = SummonerSpell(name="Ghost", region="NA")
+    print(sspell.description)
+
+
 if __name__ == "__main__":
-    #get_champions()
-    #main()
-    print_newest_match(name="Destly", tagline="NA1", region="NA")
+    get_summoner_spells()
