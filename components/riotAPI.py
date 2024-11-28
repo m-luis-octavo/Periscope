@@ -134,6 +134,7 @@ def printMatch(nameInputNonSplit):
     #print(BlueTeamPlayers)
     # Pre-processing Champion Names
     BlueTeamChampions = [p.replace("'", "") for p in BlueTeamChampions]
+    BlueTeamChampions = [p.replace(" ", "") for p in BlueTeamChampions]
     BlueTeamChampions = [p.lower() for p in BlueTeamChampions]
     BlueTeamChampions = [p.title() for p in BlueTeamChampions]
     #print(BlueTeamChampions)
@@ -142,8 +143,10 @@ def printMatch(nameInputNonSplit):
     # Red team players and champion fetch
     RedTeamPlayers = [p.summoner_name for p in match.red_team.participants]
     RedTeamChampions = [p.champion.name for p in match.red_team.participants]
+    
     # Pre-processing Champion Names
     RedTeamChampions = [p.replace("'", "") for p in RedTeamChampions]
+    RedTeamChampions = [p.replace(" ", "") for p in RedTeamChampions]
     RedTeamChampions = [p.lower() for p in RedTeamChampions]
     RedTeamChampions = [p.title() for p in RedTeamChampions]
     #print(RedTeamPlayers)

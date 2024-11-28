@@ -72,6 +72,8 @@ def index():
         #SummonerInfo.append(SummonerLevel)
         #SummonerInfo.append(SummonerIconURL)
         #print(MatchInfo[6][5])
+        #print(MatchInfo[0])
+        #print(MatchInfo[1])
         
         # Return HTML with updated values
         return render_template('index.html', SummonerInfo=SummonerInfo, MatchInfo=MatchInfo, RankInfo=RankInfo)
