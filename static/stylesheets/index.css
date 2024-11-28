@@ -1,4 +1,3 @@
-
 /* Fundamental website tweaks */
 body {
     display: flex;
@@ -78,6 +77,11 @@ a:hover {
     margin: 20px 30% 20px;
 }
 
+.v1 {
+    border-left: 2px solid whitesmoke;
+    height: 500px;
+}
+
 /*
 .field.is-horizontalSearch {
     display: flex;
@@ -85,27 +89,6 @@ a:hover {
     margin-bottom: 20px;
 }
 */
-
-#OMDBSearch {
-    margin-bottom: 10px;
-}
-
-.trophy {
-    height: 24px;
-    width: 24px;
-    margin-left: 0px;
-    margin-right: auto;
-    display: flex;
-    justify-content: left;
-}
-
-#poster {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 227.5px;
-    width: 150px;
-}
 
 /*
 .column {
@@ -122,6 +105,7 @@ a:hover {
     border-width: 1px;
 }
 
+
 .level-left {
     border-style: solid;
     border-color: aqua;
@@ -129,13 +113,6 @@ a:hover {
     margin-bottom: 0%;
 }
 
-#progress-big {
-    
-}
-
-#progress-medium {
-
-}
 
 #progress-small {
     width: 130px;
