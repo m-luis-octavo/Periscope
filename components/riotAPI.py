@@ -1,7 +1,7 @@
 # Python wrapper of the Riot API
 import cassiopeia as cass
 # API Key, resets daily
-cass.set_riot_api_key("RGAPI-6f9f5620-e395-4646-8ea1-dc18065c0c99")
+cass.set_riot_api_key("INSERT_API_KEY_HERE")
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
